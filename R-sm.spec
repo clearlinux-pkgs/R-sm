@@ -4,15 +4,20 @@
 #
 Name     : R-sm
 Version  : 2.2.5.6
-Release  : 21
+Release  : 22
 URL      : https://cran.r-project.org/src/contrib/sm_2.2-5.6.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/sm_2.2-5.6.tar.gz
 Summary  : Smoothing Methods for Nonparametric Regression and Density
 Group    : Development/Tools
 License  : GPL-2.0 GPL-2.0+
 Requires: R-sm-lib = %{version}-%{release}
+Requires: tcl
+Requires: tk
 BuildRequires : buildreq-R
-Patch1: 0001-Disable-tcltk-namespace-import.patch
+BuildRequires : tcl
+BuildRequires : tcl-dev
+BuildRequires : tk
+BuildRequires : tk-dev
 
 %description
 'Applied Smoothing Techniques for Data Analysis -
@@ -28,17 +33,16 @@ lib components for the R-sm package.
 
 %prep
 %setup -q -c -n sm
-%patch1 -p1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1562102978
+export SOURCE_DATE_EPOCH=1562810154
 
 %install
-export SOURCE_DATE_EPOCH=1562102978
+export SOURCE_DATE_EPOCH=1562810154
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
