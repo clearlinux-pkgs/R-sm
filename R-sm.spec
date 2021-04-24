@@ -4,7 +4,7 @@
 #
 Name     : R-sm
 Version  : 2.2.5.6
-Release  : 28
+Release  : 29
 URL      : https://cran.r-project.org/src/contrib/sm_2.2-5.6.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/sm_2.2-5.6.tar.gz
 Summary  : Smoothing Methods for Nonparametric Regression and Density
